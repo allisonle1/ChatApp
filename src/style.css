@@ -1,0 +1,7 @@
+#messageContainer {
+    width: 500px;
+    height: 500px;
+    border: solid black;
+    margin: 20px 0;
+    overflow: auto;
+}

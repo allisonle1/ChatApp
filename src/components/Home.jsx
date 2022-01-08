@@ -12,7 +12,6 @@ const Home = () => {
   const getMessages = () => {
     axios('http://localhost:3000/api')
     .then(response => {
-      console.log('response', response.data);
       setMessageList(response.data);
       // console.log('message list', messageList);
     })

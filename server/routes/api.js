@@ -3,21 +3,19 @@ const router = express.Router();
 const messageController = require('../controllers/messageController');
 
 router.get('/', messageController.getMessages, (req, res) => {
-  res.status(200).send(res.locals.messages);
+  return res.status(200).send(res.locals.messages);
 })
 
+router.post('/', messageController.postMessage, (req, res) => {
+  return res.sendStatus(200);
+})
 
-// router.post('/', (req, res) => {
-//   res.status(200).send('POST REQUEST SUCCESSFUL')
-// })
+router.put('/:id', messageController.updateMessage, (req, res) => {
+  return res.sendStatus(200);
+})
 
-// router.put('/', (req, res) => {
-//   res.status(200).send('PUT REQUEST SUCCESSFUL')
-// })
-
-
-// router.delete('/:id', (req, res) => {
-//   res.status(200).send('DELETE REQUEST SUCCESSFUL')
-// })
+router.delete('/:id', messageController.deleteMessage, (req, res) => {
+  return res.sendStatus(200)
+})
 
 module.exports = router;

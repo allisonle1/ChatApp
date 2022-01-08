@@ -10,7 +10,7 @@ const InputForm = () => {
           <textarea rows="5" cols="60" id="message" defaultValue="Write some comments here!"/>
         </div>
         <div>
-          <input type="submit" value="Send"/>
+          <input type="button" value="Send"/>
         </div>
       </form>
     </div>

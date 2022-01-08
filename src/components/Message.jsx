@@ -4,6 +4,7 @@ const Message = props => {
 
   return (
     <div>
+      <div>{props.message}</div>
       <button>Edit</button>
       <button>Delete</button>
     </div>

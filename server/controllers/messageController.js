@@ -22,11 +22,11 @@ messageController.postMessage = (req, res, next) => {
   console.log('POST', req.body);
   db.query(postQuery, [id, user_id, message])
     .then(data => {
-      return next()
+      return next();
     })
     .catch(err => {
       console.log('Error', err);
-      return next(err)
+      return next(err);
     })
 }
 
@@ -36,7 +36,7 @@ messageController.updateMessage = (req, res, next) => {
   const id = req.params.id;
   db.query(updateQuery, [updatedMessage, id]) 
     .then(data => {
-      return next()
+      return next();
   })
     .catch(err => {
       console.log("Error", err);
@@ -56,7 +56,7 @@ messageController.deleteMessage = (req, res, next) => {
       return next();
     })
     .catch(err => {
-      console.log(err);
+      // console.log(err);
       return next(err);
     })
 }

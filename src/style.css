@@ -5,3 +5,10 @@
     margin: 20px 0;
     overflow: auto;
 }
+
+.message {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 4px 4px 4px 3px;
+}

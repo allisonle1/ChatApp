@@ -15,7 +15,7 @@ router.put('/:id', messageController.updateMessage, (req, res) => {
 })
 
 router.delete('/:id', messageController.deleteMessage, (req, res) => {
-  return res.sendStatus(200)
+  return res.sendStatus(200);
 })
 
 module.exports = router;

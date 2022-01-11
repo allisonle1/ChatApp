@@ -14,7 +14,6 @@ messageController.getMessages = (req, res, next) => {
     })
 }
 
-
 messageController.postMessage = (req, res, next) => {
   const postQuery = "INSERT INTO messages (id, user_id, message) VALUES ($1, $2, $3)";
   const {id, user_id, message} = req.body;

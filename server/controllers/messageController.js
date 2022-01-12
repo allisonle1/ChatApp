@@ -18,14 +18,14 @@ messageController.postMessage = (req, res, next) => {
   const postQuery = "INSERT INTO messages (id, user_id, message) VALUES ($1, $2, $3)";
   const {id, user_id, message} = req.body;
 
-  console.log('POST', req.body);
+  // console.log('POST', req.body);
   db.query(postQuery, [id, user_id, message])
     .then(data => {
-      return next()
+      return next();
     })
     .catch(err => {
       console.log('Error', err);
-      return next(err)
+      return next(err);
     })
 }
 
@@ -35,7 +35,7 @@ messageController.updateMessage = (req, res, next) => {
   const id = req.params.id;
   db.query(updateQuery, [updatedMessage, id]) 
     .then(data => {
-      return next()
+      return next();
   })
     .catch(err => {
       console.log("Error", err);
@@ -45,9 +45,8 @@ messageController.updateMessage = (req, res, next) => {
 
 messageController.deleteMessage = (req, res, next) => {
   const deleteQuery = "DELETE FROM messages WHERE id = $1";
-  const id = [req.params.id];
 
-  db.query(deleteQuery, id)
+  db.query(deleteQuery, [req.params.id])
     .then(data => {
       if(data.rowCount === 0){
         return next({message: "Message not found"});
@@ -55,7 +54,7 @@ messageController.deleteMessage = (req, res, next) => {
       return next();
     })
     .catch(err => {
-      console.log(err);
+      // console.log(err);
       return next(err);
     })
 }

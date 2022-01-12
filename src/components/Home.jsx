@@ -23,6 +23,7 @@ const Home = () => {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault(); // prevents the default of the event. in this case: button does not refresh page
     const messageId = uuidv4();
 
     if(e.target.value[0] === undefined){
@@ -45,12 +46,7 @@ const Home = () => {
     }
   }
 
-  // const updateMessage = () => {
-  //   axios.put(`http://localhost:3000/api/${id}`)
-  // }
-
-  const deleteMessage = (id, e) => {
-    e.preventDefault();
+  const deleteMessage = (id) => {
     axios.delete(`http://localhost:3000/api/${id}`)
     .then(response => {
       setMessageList(messageList.filter(message => {
@@ -64,7 +60,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>DATCORD</h1>
+      <h1>Chat App</h1>
       <MessageContainer 
       messageList={messageList} 
       deleteMessage={deleteMessage}

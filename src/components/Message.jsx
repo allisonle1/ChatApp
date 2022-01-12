@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Message = props => {
-
+  
   return (
-    <div>
-      <div>{props.message}</div>
-      <button>Edit</button>
-      <button>Delete</button>
+    <div id={props.id} className='message'>
+        {props.message}
+        {/* <button>Edit</button> */}
+        <button onClick={()=>{props.deleteMessage(props.id)}}>X</button>
     </div>
   )
 }
